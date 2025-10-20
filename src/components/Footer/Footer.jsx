@@ -1,9 +1,9 @@
 import React from "react";
 
-const Footer = () => {
+const Footer = ({ age = 18 }) => {
     return (
         <footer>
-            <p>Gambling Footer A/S</p>
+            <p>Gambling Age: {age}</p>
         </footer>
     );
 };

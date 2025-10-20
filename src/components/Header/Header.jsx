@@ -1,10 +1,10 @@
 import React from "react";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ name }) => {
     return (
         <header>
-            <h1>CAVERS MUHAMMED ALI (SHARLOT JUNIOR THE 3RD)</h1>
+            <h1>Welcome Back! {name}</h1>
         </header>
     );
 };
