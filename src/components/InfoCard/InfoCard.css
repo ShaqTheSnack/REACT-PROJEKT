@@ -1,0 +1,23 @@
+.info-card {
+    border: 2px solid red;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: transparent;
+
+}
+
+.card-title {
+    color: red;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.hobby-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.hobby-list li {
+    border-color: red;
+}
+
