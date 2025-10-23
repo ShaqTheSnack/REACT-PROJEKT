@@ -47,6 +47,12 @@ const Navigation = () => {
       >
         Contact
       </NavLink>
+      <NavLink
+        to="/products"
+        style={({ isActive }) => (isActive ? { ...linkStyle, ...activeStyle } : linkStyle)}
+      >
+        Products
+      </NavLink>
     </nav>
   );
 };

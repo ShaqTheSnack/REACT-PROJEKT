@@ -4,7 +4,7 @@ const About = () => {
   return (
     <section>
       <h2>About</h2>
-      <p>Dette er en simpel React-router demo med layout og navigation.</p>
+      <p>Dette er faktisk en gambling side hvis man tænker over det for 18-</p>
     </section>
   );
 };
