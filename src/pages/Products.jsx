@@ -1,35 +1,47 @@
 import React, { useEffect, useState } from "react";
-import Card from "../components/Card/Card";
+import ProductCard from "../components/Card/Card";
 import GridContainer from "../components/GridContainer/GridContainer";
 
 function Products() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [productss, setData] = useState();
+  const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data.products || []);
-        setLoading(false);
-      });
+    async function fetchData() {
+      try {
+        const response = await fetch("https://dummyjson.com/products");
+        if (!response.ok) {
+          throw new Error(`HTTP Error: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("Der skete en fejl", error);
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchData();
   }, []);
 
-  if (loading) return <p>Henter produkter...</p>;
+  if (isLoading) return <p>Henter produkter...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <section>
       <h2>Products</h2>
       <GridContainer>
-        {products.map((p) => (
-          <Card
+        {productss?.products?.map((p) => (
+          <ProductCard
             key={p.id}
             title={p.title}
             image={p.images && p.images.length > 0 ? p.images[0] : ""}
             price={`$${p.price}`}
             description={p.description}
-            buttonText="Køb"
-            onButtonClick={() => alert(`Du valgte ${p.title}`)}
+            buttonText="Se detaljer"
+            linkTo={`/products/${p.id}`}
           />
         ))}
       </GridContainer>

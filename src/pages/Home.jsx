@@ -1,7 +1,7 @@
 import React from "react";
 import InfoCard from "../components/InfoCard/InfoCard";
 import GridContainer from "../components/GridContainer/GridContainer";
-import Card from "../components/Card/Card";
+import ProductCard from "../components/Card/Card";
 import Counter from "../components/Counter/Counter";
 import diceImg from "../assets/Images/Dice.png";
 
@@ -30,7 +30,7 @@ const Home = () => {
       <Counter />
       <GridContainer>
         {cards.map((card, idx) => (
-          <Card key={idx} {...card} />
+          <ProductCard key={idx} {...card} />
         ))}
       </GridContainer>
     </>
