@@ -24,7 +24,7 @@ function SingleProduct() {
 
   return (
     <section>
-      <button onClick={() => navigate(-1)} style={{ marginBottom: 12 }}>Tilbage</button>
+      <button onClick={() => navigate('/products')} style={{ marginBottom: 12 }}>Tilbage</button>
       <h2>{product.title}</h2>
       <p style={{ fontWeight: 700 }}>${product.price}</p>
       <p>{product.description}</p>
