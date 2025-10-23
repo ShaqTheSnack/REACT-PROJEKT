@@ -1,9 +1,10 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = ({ age = 18 }) => {
     return (
-        <footer>
-            <p>Gambling Age: {age}</p>
+        <footer className="footer">
+            <p className="footer-text">Gambling Age: {age}</p>
         </footer>
     );
 };

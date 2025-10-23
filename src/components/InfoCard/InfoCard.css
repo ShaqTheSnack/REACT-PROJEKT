@@ -2,7 +2,7 @@
     border: 2px solid red;
     padding: 20px;
     border-radius: 10px;
-    background-color: #99999980;
+    background-color: #000000a4;
 }
 
 .card-title {
@@ -19,4 +19,12 @@
 
 .hobby-list li {
     font-weight: bold;
+}
+
+.hobby-image {
+     display: block;
+     margin: 15px auto 0 auto;
+     max-width: 120px;
+     border-radius: 8px;
+     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
